@@ -4,31 +4,31 @@ This repository contains code for a PWA text editor, that runs in the browser. T
 
 ## Table of contents
 
-    - [Features]()
-    - [Technologies]()
-    - [Installation]()
-    - [Usage]()
-    - [License]()
-    - [Contact Info]()
+ - [Features](#features)
+ - [Technologies](#technologies)
+ - [Installation](#installation)
+ - [Usage](#)
+ - [License](#license)
+ - [Contact Info](#contact)
 
 ## Features
-    -Edit text documents
-    -Useable offline
-    -Storeable in Indexdb
+- Edit text documents
+- Useable offline
+- Storeable in Indexdb
 
 ## Technologies
-    -Node.js
-    -Web Pack
-    -Express
-    -IndexDB
-    -Workbox
+- Node.js
+- Web Pack
+- Express
+- IndexDB
+- Workbox
 
 ## Installation
 
 To get started, follow these steps:
-    1.Clone the repository
-    2.Navigate to your project directory
-    3.Install the required dependencies by running the command `npm install`
+1. Clone the repository
+2. Navigate to your project directory
+3. Install the required dependencies by running the command `npm install`
 
 ## License
 

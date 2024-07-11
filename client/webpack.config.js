@@ -19,17 +19,19 @@ module.exports = () => {
     }, //workbox plugins for a service worker and manifest file.
     plugins: [ 
       new HtmlWebpackPlugin({
-        template: '',
-        filename: 'index.html',
-        chunks: ['main'],
+        template: './index.html',
+        title: 'Text Editor',
       }),
       new WebpackPwaManifest({
-        name: 'Jate',
-        short_name: 'Jate',
+        fingerprints: false,
+        inject: true,
+        name: 'Text Editor',
+        short_name: 'Text Editor',
         description: 'A simple text editor',
         background_color: '#ffffff',
         theme_color: '#2196f3',
         start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
@@ -40,7 +42,7 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'sw.js',
+        swDest: 'src-sw.js',
       }),
     ],
     module: {// CSS loaders and babel to webpack.

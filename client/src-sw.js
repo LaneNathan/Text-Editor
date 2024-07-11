@@ -4,7 +4,7 @@ const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
 import { warmStrategyCache } from 'workbox-recipes';
 
-precacheAndRoute(self.__WB_MANIFEST);
+// Implement page caching
 
 const pageCache = new CacheFirst({
   cacheName: 'page-cache',
@@ -27,7 +27,13 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 // Implement asset caching
 registerRoute(
-  ({ request }) => request.destination === 'script' ||
-    request.destination === 'image',
-    pageCache
+  ({ request }) => ["style", "script", "worker"].includes(request.destination),
+    new StaleWhileRevalidate({
+      cacheName: 'asset-cache',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  })
 );
